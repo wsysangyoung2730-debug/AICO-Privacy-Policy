@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require "cgi"
 
 SOURCE_PATH = File.join(__dir__, "docs", "privacy-policy.md")
@@ -18,7 +20,7 @@ def heading_id(text, fallback_index)
   number ? "section-#{number.tr('.', '-')}" : "section-#{fallback_index}"
 end
 
-lines = File.readlines(SOURCE_PATH, chomp: true)
+lines = File.readlines(SOURCE_PATH, chomp: true, encoding: "UTF-8")
 effective_date = lines.find { |line| line.start_with?("- 시행일:") }&.sub("- 시행일:", "")&.strip
 updated_date = lines.find { |line| line.start_with?("- 최종 수정일:") }&.sub("- 최종 수정일:", "")&.strip
 policy_version = lines.find { |line| line.start_with?("- 버전:") }&.sub("- 버전:", "")&.strip
