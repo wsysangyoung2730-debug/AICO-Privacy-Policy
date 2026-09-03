@@ -9,17 +9,20 @@ AICO iPhone 앱의 개인정보처리방침을 공개하기 위한 저장소입�
 
 두 파일은 동일한 정책 내용을 담습니다. 개인정보 처리 항목이나 앱 동작이 변경되면 시행일과 변경 이력을 함께 갱신해야 합니다.
 
-## GitHub Pages 게시
+## Vercel 게시
 
-저장소의 **Settings > Pages**에서 다음과 같이 설정합니다.
+이 저장소는 별도 서버 코드 없이 `docs` 폴더를 정적 사이트로 배포합니다. `vercel.json`에 필요한 설정이 포함되어 있습니다.
 
-1. **Build and deployment**의 Source를 **Deploy from a branch**로 선택합니다.
-2. Branch를 **main**, 폴더를 **/docs**로 지정하고 저장합니다.
-3. 배포가 완료되면 다음 주소에서 확인합니다.
+1. Vercel에서 **Add New > Project**를 선택합니다.
+2. GitHub의 `wsysangyoung2730-debug/AICO-Privacy-Policy` 저장소를 가져옵니다.
+3. Framework Preset은 **Other**, Production Branch는 **main**으로 유지합니다.
+4. 저장소의 `vercel.json` 설정을 사용해 배포합니다.
 
-<https://wsysangyoung2730-debug.github.io/AICO-Privacy-Policy/>
+Vercel 프로젝트의 Git 연결을 완료하면 `main`에 변경 사항을 push할 때마다 새 Production Deployment가 자동으로 생성됩니다.
 
-개인 저장소에서 운영하는 동안 App Store Connect의 **Privacy Policy URL**과 AICO 앱 내부 링크에는 위 주소를 사용합니다. 이후 조직 저장소로 이전하면 조직의 GitHub Pages 주소로 함께 변경합니다.
+Production URL: <https://aico-privacy-policy.vercel.app/>
+
+배포가 완료되면 고정된 Production Domain을 App Store Connect의 **Privacy Policy URL**과 AICO 앱 내부 링크에 동일하게 사용합니다. 저장소를 조직으로 이전하더라도 이 도메인은 변경하지 않는 것을 권장합니다.
 
 ## 운영 정보
 

@@ -129,6 +129,10 @@ document = <<~HTML
     <meta property="og:title" content="AICO 개인정보처리방침">
     <meta property="og:description" content="AICO의 개인정보 처리 방식과 이용자의 권리를 확인하세요.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aico-privacy-policy.vercel.app/">
+    <meta property="og:image" content="https://aico-privacy-policy.vercel.app/assets/aico-app-icon.jpg">
+    <meta property="og:image:alt" content="AICO 앱 아이콘">
+    <link rel="canonical" href="https://aico-privacy-policy.vercel.app/">
     <link rel="icon" type="image/jpeg" href="./assets/aico-app-icon.jpg">
     <title>AICO 개인정보처리방침</title>
     <style>
