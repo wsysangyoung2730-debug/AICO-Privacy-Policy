@@ -129,6 +129,7 @@ document = <<~HTML
     <meta property="og:title" content="AICO 개인정보처리방침">
     <meta property="og:description" content="AICO의 개인정보 처리 방식과 이용자의 권리를 확인하세요.">
     <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" href="./assets/aico-app-icon.jpg">
     <title>AICO 개인정보처리방침</title>
     <style>
       :root {
@@ -213,20 +214,21 @@ document = <<~HTML
       .brand {
         display: inline-flex;
         align-items: center;
-        gap: 9px;
+        gap: 10px;
         color: var(--text);
         font-size: 18px;
         font-weight: 700;
         letter-spacing: -0.025em;
         text-decoration: none;
       }
-      .brand::before {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background: var(--brand);
-        box-shadow: 0 0 0 5px var(--brand-soft);
-        content: "";
+      .brand__icon {
+        width: 30px;
+        height: 30px;
+        display: block;
+        border: 1px solid rgb(0 0 0 / 6%);
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
       }
       .site-header__section {
         color: var(--muted);
@@ -248,13 +250,27 @@ document = <<~HTML
         letter-spacing: 0.045em;
         text-transform: uppercase;
       }
+      .hero__title-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(36px, 6vw, 84px);
+      }
       .hero h1 {
+        flex: 1 1 auto;
         max-width: 880px;
         margin: 0;
         font-size: clamp(42px, 7vw, 72px);
         font-weight: 700;
         line-height: 1.08;
         letter-spacing: -0.055em;
+      }
+      .hero__character {
+        width: clamp(136px, 16vw, 184px);
+        height: auto;
+        flex: 0 0 auto;
+        display: block;
+        filter: drop-shadow(0 18px 22px rgb(191 50 0 / 16%));
       }
       .hero__lead {
         max-width: 760px;
@@ -508,6 +524,8 @@ document = <<~HTML
         .layout,
         .footer__inner { width: min(calc(100% - 40px), 720px); }
         .hero { padding: 76px 0 56px; }
+        .hero__title-row { gap: 28px; }
+        .hero__character { width: 124px; }
         .principles__inner { grid-template-columns: 1fr; }
         .principle {
           min-height: auto;
@@ -525,6 +543,10 @@ document = <<~HTML
         .toc { display: none; }
         .mobile-toc { display: block; }
         h2 { margin-top: 64px; }
+      }
+
+      @media (max-width: 620px) {
+        .hero__character { display: none; }
       }
 
       @media (max-width: 520px) {
@@ -562,7 +584,7 @@ document = <<~HTML
 
       @media print {
         body { font-size: 10.5pt; }
-        .site-header, .principles, .toc, .mobile-toc, .skip-link, .back-to-top { display: none; }
+        .site-header, .principles, .toc, .mobile-toc, .skip-link, .back-to-top, .hero__character { display: none; }
         .hero, .layout { width: 100%; padding: 0; }
         .hero { margin-bottom: 36px; }
         .hero h1 { font-size: 30pt; }
@@ -579,14 +601,20 @@ document = <<~HTML
     <a class="skip-link" href="#policy">본문으로 바로가기</a>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="#top" aria-label="AICO 개인정보처리방침 맨 위로">AICO</a>
+        <a class="brand" href="#top" aria-label="AICO 개인정보처리방침 맨 위로">
+          <img class="brand__icon" src="./assets/aico-app-icon.jpg" width="30" height="30" alt="">
+          <span>AICO</span>
+        </a>
         <span class="site-header__section">개인정보 보호</span>
       </div>
     </header>
     <main class="page">
       <header class="hero">
         <p class="eyebrow">Privacy</p>
-        <h1>AICO 개인정보처리방침</h1>
+        <div class="hero__title-row">
+          <h1>AICO 개인정보처리방침</h1>
+          <img class="hero__character" src="./assets/aico-character.png" width="440" height="440" alt="" fetchpriority="high">
+        </div>
         <p class="hero__lead">AICO가 개인정보를 수집·이용·보관·공유하는 방법과 이용자가 자신의 정보를 관리하는 방법을 안내합니다.</p>
         <ul class="hero-meta" aria-label="문서 정보">
           <li>2026년 9월 4일 업데이트</li>
