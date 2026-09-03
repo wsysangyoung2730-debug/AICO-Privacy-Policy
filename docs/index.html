@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AICO 애플리케이션 개인정보처리방침">
+  <meta name="color-scheme" content="light">
+  <title>AICO 개인정보처리방침</title>
+  <style>
+    :root {
+      --background: #fffaf6;
+      --surface: #ffffff;
+      --text: #292521;
+      --muted: #746b64;
+      --line: #eadfd6;
+      --brand: #e8642a;
+      --brand-soft: #fff0e7;
+      --focus: #155eef;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    a { color: #b84013; text-underline-offset: 3px; }
+    a:hover { color: var(--brand); }
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--text);
+      color: #fff;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .page {
+      width: min(100% - 32px, 960px);
+      margin: 0 auto;
+      padding: 48px 0 80px;
+    }
+
+    .hero {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: 0 12px 36px rgb(80 48 25 / 8%);
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--brand);
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: .08em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 6vw, 50px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+    .hero p { margin: 18px 0 0; color: var(--muted); }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .hero-meta span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: #8f3513;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+      margin-top: 32px;
+    }
+    nav {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+    nav strong { display: block; margin-bottom: 10px; }
+    nav ol { margin: 0; padding-left: 22px; }
+    nav li { margin: 5px 0; color: var(--muted); font-size: 14px; }
+    nav a { color: inherit; text-decoration: none; }
+    nav a:hover { color: var(--brand); text-decoration: underline; }
+
+    article {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+    }
+    article > h1:first-child,
+    article > h1:first-child + p,
+    article > h1:first-child + p + p,
+    article > h1:first-child + p + p + ul { display: none; }
+    h2 {
+      scroll-margin-top: 24px;
+      margin: 54px 0 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 25px;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+    h2:first-of-type { margin-top: 0; border-top: 0; padding-top: 0; }
+    h3 { margin: 30px 0 12px; font-size: 19px; line-height: 1.45; }
+    p { margin: 12px 0; }
+    ul, ol { padding-left: 24px; }
+    li + li { margin-top: 6px; }
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: var(--brand-soft);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .9em;
+    }
+
+    .table-scroll {
+      margin: 18px 0 26px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 600px; }
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: var(--brand-soft); color: #713016; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 20px, 720px); padding: 20px 0 48px; }
+      .hero, article { padding: 24px 20px; border-radius: 20px; }
+      .layout { display: block; margin-top: 20px; }
+      nav { position: static; max-height: none; margin-bottom: 20px; }
+      h2 { margin-top: 42px; font-size: 22px; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .page { width: 100%; padding: 0; }
+      .hero, article { box-shadow: none; border: 0; padding: 0; }
+      .layout { display: block; }
+      nav, .skip-link { display: none; }
+      h2 { break-after: avoid; }
+      .table-scroll { overflow: visible; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#policy">본문으로 바로가기</a>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">AICO · PRIVACY</p>
+      <h1>AICO 개인정보처리방침</h1>
+      <p>성인 보호자와 돌봄 제공자를 위한 AICO가 개인정보를 처리하는 방법을 안내합니다.</p>
+      <div class="hero-meta" aria-label="문서 정보">
+        <span>시행일 2026. 9. 3.</span>
+        <span>버전 1.0</span>
+        <span>운영자 우상영</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="목차">
+        <strong>목차</strong>
+        <ol>
+          <li><a href="#section-1">개인정보 처리 주체</a></li>
+<li><a href="#section-2">처리하는 정보</a></li>
+<li><a href="#section-3">민감정보 및 제3자에 관한 정보</a></li>
+<li><a href="#section-4">처리 목적</a></li>
+<li><a href="#section-5">iPhone 내부 저장</a></li>
+<li><a href="#section-6">CloudKit 공동돌봄 공유</a></li>
+<li><a href="#section-7">개인정보의 제3자 제공</a></li>
+<li><a href="#section-8">개인정보 처리위탁 및 국외 처리 가능성</a></li>
+<li><a href="#section-9">보유 기간과 파기</a></li>
+<li><a href="#section-10">이용자의 권리와 행사 방법</a></li>
+<li><a href="#section-11">알림</a></li>
+<li><a href="#section-12">안전성 확보 조치</a></li>
+<li><a href="#section-13">개인정보 자동 수집 장치</a></li>
+<li><a href="#section-14">14세 미만 아동에 관한 사항</a></li>
+<li><a href="#section-15">개인정보 보호책임자 및 문의</a></li>
+<li><a href="#section-16">개인정보처리방침의 변경</a></li>
+        </ol>
+      </nav>
+
+      <article id="policy">
+        <h1 id="top">AICO 개인정보처리방침</h1>
+<p>우상영(AICO 운영자, 이하 “운영자”)은 AICO 애플리케이션(이하 “AICO”) 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관계 법령을 준수하기 위하여 다음과 같이 개인정보처리방침을 공개합니다.</p>
+<p>AICO는 성인 보호자 및 돌봄 제공자를 위한 기록·공유 도구입니다. AICO는 의료인의 진단이나 치료를 대신하지 않습니다.</p>
+<ul>
+<li>시행일: 2026년 9월 3일</li>
+<li>최종 수정일: 2026년 9월 3일</li>
+<li>버전: 1.0</li>
+</ul>
+<h2 id="section-1">1. 개인정보 처리 주체</h2>
+<ul>
+<li>서비스명: AICO</li>
+<li>운영자 및 개인정보 보호책임자: 우상영</li>
+<li>문의 이메일: <a href="mailto:sangyoung2730@naver.com">sangyoung2730@naver.com</a></li>
+</ul>
+<p>운영자는 별도의 회원 서버를 운영하지 않습니다. 사용자가 입력한 정보는 기본적으로 사용자의 iPhone에 저장되며, 사용자가 보호자 공유 기능을 선택한 경우에만 일부 정보가 사용자의 iCloud 계정과 Apple CloudKit을 통해 공유됩니다.</p>
+<h2 id="section-2">2. 처리하는 정보</h2>
+<h3 id="section-2-1">2.1 사용자가 직접 입력하거나 선택하는 정보</h3>
+<div class="table-scroll"><table>
+<thead><tr><th>구분</th><th>처리 항목</th><th>필수 여부</th><th>기본 저장 위치</th></tr></thead>
+<tbody>
+<tr><td>보호자 프로필</td><td>이름 또는 닉네임, 돌봄 대상자와의 관계</td><td>필수</td><td>iPhone 내부</td></tr>
+<tr><td>보호자 프로필</td><td>프로필 사진</td><td>선택</td><td>iPhone 내부</td></tr>
+<tr><td>돌봄 대상자 프로필</td><td>이름 또는 닉네임</td><td>필수</td><td>iPhone 내부</td></tr>
+<tr><td>돌봄 대상자 프로필</td><td>나이, 성별, 자폐 정도·특성, 프로필 사진</td><td>선택</td><td>iPhone 내부</td></tr>
+<tr><td>행동 기록</td><td>발생 일시, 선행 상황·행동·보호자 대응·대응 결과 태그</td><td>사용 시 필수</td><td>iPhone 내부</td></tr>
+<tr><td>행동 기록</td><td>추가 메모, 사진 또는 영상 첨부</td><td>선택</td><td>iPhone 내부</td></tr>
+<tr><td>맞춤 설정</td><td>사용자가 만든 기록 태그</td><td>선택</td><td>iPhone 내부</td></tr>
+<tr><td>공동돌봄</td><td>공유방 이름, 공유 대상자, 참여 상태 및 역할</td><td>공유 기능 사용 시</td><td>iPhone 내부 및 CloudKit</td></tr>
+</tbody></table></div>
+<h3 id="section-2-2">2.2 서비스 이용 과정에서 처리될 수 있는 기술 정보</h3>
+<ul>
+<li>AICO 내부에서 생성한 무작위 식별자(UUID)</li>
+<li>Apple CloudKit 사용자 식별자 및 공유 레코드 식별자</li>
+<li>공유 초대의 수락 상태와 공유 참여자 정보</li>
+<li>동기화 상태, 기록 생성·수정 시각 및 공유 활동 내역</li>
+<li>알림 허용 여부, 사용 가이드 확인 여부 등 앱 설정값</li>
+</ul>
+<p>AICO는 자체 광고 식별자, 위치정보, 연락처, 결제정보를 수집하지 않으며 광고 또는 사용자 행동 분석 SDK를 사용하지 않습니다. 사용자의 Apple 계정 비밀번호와 iCloud 로그인 정보에도 접근하지 않습니다.</p>
+<h2 id="section-3">3. 민감정보 및 제3자에 관한 정보</h2>
+<p>돌봄 대상자의 자폐 정도·특성, 행동 기록 및 자유 입력 메모에는 건강 상태나 장애에 관한 민감정보가 포함될 수 있습니다. 사용자는 필요한 최소한의 정보만 입력해야 합니다.</p>
+<p>AICO의 직접 이용자는 성인 보호자 또는 돌봄 제공자로 한정됩니다. 14세 미만 아동은 AICO를 직접 이용하거나 보호자 프로필을 만들 수 없습니다. 아동을 포함한 제3자의 정보를 입력하거나 공유하려는 사용자는 해당 정보를 처리할 수 있는 법정대리인 권한 또는 적법한 동의를 보유해야 합니다.</p>
+<p>민감정보의 입력과 CloudKit 공유는 선택 사항입니다. 사용자는 관련 안내 및 동의를 거부할 수 있으나, 거부하는 경우 해당 정보의 저장 또는 공동돌봄 공유 기능이 제한될 수 있습니다.</p>
+<h2 id="section-4">4. 처리 목적</h2>
+<p>운영자는 다음 목적을 위해서만 정보를 처리합니다.</p>
+<ol>
+<li>보호자와 돌봄 대상자 프로필 구성</li>
+<li>ABC 방식의 행동 기록 작성·조회·수정·삭제</li>
+<li>사용자가 선택한 보호자 사이의 기록 공유 및 동기화</li>
+<li>공유방 참여자와 변경 사항 표시</li>
+<li>기록 활동에 관한 기기 알림 제공</li>
+<li>서비스 오류 확인, 문의 대응 및 데이터 권리 요청 처리</li>
+</ol>
+<p>운영자는 수집한 정보를 광고, 맞춤형 마케팅 또는 자동화된 의료적 판단에 사용하지 않습니다.</p>
+<h2 id="section-5">5. iPhone 내부 저장</h2>
+<p>다음 정보는 기본적으로 사용자의 iPhone 앱 저장 공간 또는 AICO App Group 저장 공간에 보관됩니다.</p>
+<ul>
+<li>보호자 및 돌봄 대상자 프로필</li>
+<li>행동 기록과 사용자 지정 태그</li>
+<li>사용자가 첨부한 사진·영상</li>
+<li>공유 활동 내역과 앱 설정</li>
+</ul>
+<p>행동 기록에 첨부한 사진과 영상은 현재 CloudKit 공동돌봄 공유 대상에 포함되지 않으며 해당 기기에만 저장됩니다. iPhone의 기기 백업 설정에 따라 Apple의 iCloud 백업 대상에 포함될 가능성은 있습니다.</p>
+<h2 id="section-6">6. CloudKit 공동돌봄 공유</h2>
+<p>사용자가 공유방을 만들거나 초대를 수락하면 AICO는 Apple의 CloudKit 및 CKShare 기능을 사용합니다.</p>
+<h3 id="section-6-1">6.1 CloudKit에 저장·공유되는 정보</h3>
+<ul>
+<li>공유방 이름, 공유 대상자 닉네임 및 내부 식별자</li>
+<li>돌봄 대상자의 나이, 성별, 자폐 정도·특성 및 프로필 사진</li>
+<li>사용자가 만든 기록 태그</li>
+<li>행동 기록 일시, 선행 상황·행동·보호자 대응·대응 결과 태그 및 추가 메모</li>
+<li>기록 작성자의 이름 또는 닉네임, 내부 CloudKit 식별자 및 프로필 사진</li>
+<li>공유 참여자의 역할과 초대 수락 상태</li>
+</ul>
+<p>행동 기록에 첨부한 사진과 영상은 CloudKit으로 공유되지 않습니다.</p>
+<h3 id="section-6-2">6.2 정보를 확인할 수 있는 사람</h3>
+<p>공유방을 만든 사용자와 초대 링크를 전달받아 iCloud 공유 참여를 수락한 사용자만 공유방 정보에 접근할 수 있습니다. 공유방 참여자는 공유된 기록을 열람하고 자신의 기록을 추가할 수 있습니다.</p>
+<p>초대 링크를 전달받은 사람이 참여를 수락할 수 있으므로 사용자는 신뢰할 수 있는 보호자에게만 링크를 전달하고, 링크가 의도하지 않은 사람에게 전달되지 않도록 주의해야 합니다. 공유방 소유자는 참여자를 내보내거나 공유방을 삭제하여 접근을 철회할 수 있습니다.</p>
+<h3 id="section-6-3">6.3 Apple 서비스 이용</h3>
+<p>CloudKit 데이터는 사용자의 iCloud 계정 영역과 공유 데이터베이스에 저장됩니다. AICO 운영자는 별도의 자체 클라우드 데이터베이스에 해당 내용을 복제하지 않으며, 사용자의 Apple 계정 비밀번호에 접근하지 않습니다.</p>
+<p>CloudKit의 처리와 보안에는 Apple의 약관 및 개인정보 보호정책도 적용됩니다.</p>
+<ul>
+<li><a href="https://www.apple.com/kr/legal/privacy/kr/">Apple 개인정보 처리방침</a></li>
+<li><a href="https://www.apple.com/kr/privacy/features/">Apple의 CloudKit 개인정보 보호 설명</a></li>
+</ul>
+<h2 id="section-7">7. 개인정보의 제3자 제공</h2>
+<p>AICO는 사용자가 공동돌봄 공유를 직접 선택한 경우 다음과 같이 정보를 제공합니다.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>제공받는 자</th><th>제공 목적</th><th>제공 항목</th><th>보유·이용 기간</th></tr></thead>
+<tbody>
+<tr><td>사용자가 초대하고 공유 참여를 수락한 보호자 또는 돌봄 제공자</td><td>공동돌봄 기록의 확인·작성·동기화</td><td>제6.1항의 CloudKit 공유 정보</td><td>공유방에서 나가거나, 참여가 해제되거나, 공유방 또는 해당 데이터가 삭제될 때까지</td></tr>
+</tbody></table></div>
+<p>운영자는 사용자의 별도 동의 또는 법적 근거 없이 개인정보를 판매하거나 광고 사업자에게 제공하지 않습니다.</p>
+<h2 id="section-8">8. 개인정보 처리위탁 및 국외 처리 가능성</h2>
+<p>AICO는 공동돌봄 기능 제공을 위해 Apple의 iCloud·CloudKit 인프라를 이용합니다.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>수탁자</th><th>업무 내용</th><th>처리되는 정보</th><th>처리 시점과 방법</th><th>보유 기간</th></tr></thead>
+<tbody>
+<tr><td>Apple Inc. 및 Apple의 서비스 제공자</td><td>CloudKit 저장, 동기화, 공유, 푸시 알림 인프라 제공</td><td>제6.1항의 CloudKit 공유 정보와 관련 기술 식별자</td><td>공유방 생성·참여·동기화 시 암호화된 통신망을 통해 전송</td><td>사용자가 데이터를 삭제하거나 공유방이 삭제될 때까지 또는 Apple 정책에 따른 기간</td></tr>
+</tbody></table></div>
+<p>Apple과 Apple의 서비스 제공자는 미국을 포함하여 데이터센터가 위치한 국가 또는 지역에서 정보를 처리할 수 있습니다. 구체적인 처리 위치는 사용자의 Apple 계정 설정과 Apple의 인프라 운영에 따라 달라질 수 있습니다. 사용자는 CloudKit 공동돌봄 기능을 사용하지 않음으로써 이러한 처리를 거부할 수 있으며, 이 경우 기기 내부 기록 기능은 계속 이용할 수 있습니다.</p>
+<h2 id="section-9">9. 보유 기간과 파기</h2>
+<p>운영자는 처리 목적 달성 또는 사용자의 삭제 요청이 확인되면 지체 없이 정보를 삭제합니다.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>저장 위치</th><th>보유 기간</th><th>삭제 방법</th></tr></thead>
+<tbody>
+<tr><td>iPhone 내부</td><td>사용자가 직접 삭제하거나 앱 데이터를 초기화하거나 앱을 제거할 때까지</td><td>앱의 삭제 기능 또는 iOS 앱 제거를 통해 삭제</td></tr>
+<tr><td>CloudKit에 공유된 개별 기록</td><td>작성자가 앱 데이터 전체 삭제를 실행하거나 공유방 소유자가 공유방을 삭제할 때까지</td><td>작성자의 공유 레코드 또는 공유 영역 삭제</td></tr>
+<tr><td>공유방</td><td>공유방 소유자가 삭제할 때까지</td><td>소유자가 공유방 삭제 시 해당 CloudKit 공유 영역 삭제</td></tr>
+<tr><td>공유 참여자의 로컬 사본</td><td>참여자가 공유방에서 나가거나 연결을 초기화할 때까지</td><td>수신 기록과 공유 연결 정보를 기기에서 삭제</td></tr>
+</tbody></table></div>
+<p>현재 개별 기록의 삭제는 먼저 해당 iPhone의 로컬 사본과 첨부 파일에 적용됩니다. 이미 CloudKit에 공유된 사본까지 삭제하려면 <code>앱 데이터 전체 삭제</code>를 실행하거나 공유방 소유자가 공유방을 삭제해야 합니다.</p>
+<p>참여자가 공유방에서 나가더라도 그 전에 공유한 기록은 공유방 소유자의 CloudKit 영역에 남아 있을 수 있습니다. 참여자는 나가기 전에 <code>앱 데이터 전체 삭제</code>를 실행하거나 운영자에게 삭제 방법을 문의할 수 있습니다.</p>
+<p>네트워크 또는 iCloud 서비스가 일시적으로 사용할 수 없는 상태에서 삭제를 요청하면 CloudKit 반영이 지연될 수 있습니다. 사용자는 네트워크 연결 후 다시 시도하거나 문의 이메일로 삭제를 요청할 수 있습니다.</p>
+<h2 id="section-10">10. 이용자의 권리와 행사 방법</h2>
+<p>사용자는 다음 방법으로 자신의 정보에 관한 권리를 행사할 수 있습니다.</p>
+<ul>
+<li>개별 프로필·기록·첨부 파일의 기기 내 사본 수정 또는 삭제</li>
+<li><code>설정 &gt; 데이터 &gt; 앱 데이터 전체 삭제</code>를 통한 기기 데이터 초기화 및 작성자가 공유한 CloudKit 기록 삭제 요청</li>
+<li><code>설정 &gt; 보호자 연동 관리</code>에서 참여자 내보내기, 공유방 나가기 또는 공유방 삭제</li>
+<li>iPhone 설정에서 AICO의 알림 또는 iCloud 사용 설정 변경</li>
+<li>이메일을 통한 열람, 정정, 삭제, 처리정지 및 동의 철회 요청</li>
+</ul>
+<p>운영자는 권리 행사자의 본인 여부와 대상자 정보를 처리할 적법한 권한을 확인할 수 있으며, 관계 법령에서 정한 기간 안에 조치하고 결과를 안내합니다.</p>
+<h2 id="section-11">11. 알림</h2>
+<p>AICO는 사용자가 알림을 허용한 경우 새로운 공유 기록 활동을 iPhone의 로컬 알림으로 표시합니다. 사용자는 AICO 설정 또는 iPhone의 알림 설정에서 언제든 알림을 끌 수 있습니다. 알림을 끄더라도 앱 내부의 공유 활동 내역은 유지될 수 있습니다.</p>
+<h2 id="section-12">12. 안전성 확보 조치</h2>
+<p>운영자는 개인정보 보호를 위해 다음과 같은 조치를 적용합니다.</p>
+<ul>
+<li>iOS 앱 샌드박스와 App Group 접근 통제를 통한 기기 파일 보호</li>
+<li>전송 구간 암호화를 제공하는 Apple CloudKit 사용</li>
+<li>iCloud 계정 인증과 CKShare 참여 권한에 기반한 공유 접근 통제</li>
+<li>자체 광고·분석 SDK 및 자체 회원 서버 미사용</li>
+<li>공유 참여자 제거, 공유방 나가기·삭제 및 전체 데이터 삭제 기능 제공</li>
+</ul>
+<p>사용자는 iPhone 잠금 암호를 설정하고, Apple 계정의 이중 인증을 사용하며, 공유 초대 링크를 신뢰할 수 있는 사람에게만 전달해야 합니다.</p>
+<h2 id="section-13">13. 개인정보 자동 수집 장치</h2>
+<p>AICO 운영자는 맞춤형 광고나 사용자 추적을 위한 쿠키, 광고 식별자 또는 유사 기술을 사용하지 않습니다. Apple이 iCloud 및 App Store 서비스를 운영하면서 처리하는 정보에는 Apple의 개인정보 보호정책이 적용됩니다.</p>
+<h2 id="section-14">14. 14세 미만 아동에 관한 사항</h2>
+<p>AICO는 성인 보호자와 돌봄 제공자를 대상으로 하며 14세 미만 아동의 직접 이용을 의도하지 않습니다. 운영자가 14세 미만 아동이 보호자 프로필을 만들어 앱을 직접 이용한다는 사실을 확인한 경우 해당 이용 중단과 정보 삭제를 요청할 수 있습니다.</p>
+<p>성인 사용자가 돌봄 대상 아동의 정보를 입력하는 경우, 사용자는 법정대리인이거나 법정대리인으로부터 해당 정보의 기록과 공유에 관한 적법한 권한 또는 동의를 받은 사람이어야 합니다.</p>
+<h2 id="section-15">15. 개인정보 보호책임자 및 문의</h2>
+<ul>
+<li>개인정보 보호책임자: 우상영</li>
+<li>이메일: <a href="mailto:sangyoung2730@naver.com">sangyoung2730@naver.com</a></li>
+</ul>
+<p>개인정보 처리와 관련한 문의, 불만, 열람·정정·삭제 또는 동의 철회 요청은 위 이메일로 보내주시기 바랍니다.</p>
+<p>추가적인 개인정보 침해 상담이 필요한 경우 다음 기관에 문의할 수 있습니다.</p>
+<ul>
+<li>개인정보침해 신고센터: 국번 없이 118, <a href="https://privacy.kisa.or.kr/">privacy.kisa.or.kr</a></li>
+<li>개인정보분쟁조정위원회: 1833-6972, <a href="https://www.kopico.go.kr/">kopico.go.kr</a></li>
+</ul>
+<h2 id="section-16">16. 개인정보처리방침의 변경</h2>
+<p>이 개인정보처리방침의 내용이 변경되는 경우 시행 전에 이 페이지를 통해 변경 내용과 시행일을 안내합니다. 중요한 변경이 있는 경우 앱 내부 안내 등 합리적인 방법으로 추가 고지합니다.</p>
+<h3 id="section-23">변경 이력</h3>
+<div class="table-scroll"><table>
+<thead><tr><th>버전</th><th>시행일</th><th>변경 내용</th></tr></thead>
+<tbody>
+<tr><td>1.0</td><td>2026년 9월 3일</td><td>최초 제정</td></tr>
+</tbody></table></div>
+      </article>
+    </div>
+
+    <footer>
+      <p>© 2026 AICO · 문의 <a href="mailto:sangyoung2730@naver.com">sangyoung2730@naver.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
