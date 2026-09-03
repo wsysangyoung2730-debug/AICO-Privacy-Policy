@@ -17,9 +17,9 @@ AICO iPhone 앱의 개인정보처리방침을 공개하기 위한 저장소입�
 2. Branch를 **main**, 폴더를 **/docs**로 지정하고 저장합니다.
 3. 배포가 완료되면 다음 주소에서 확인합니다.
 
-<https://developeracademy-postech.github.io/AICO-Privacy-Policy/>
+<https://wsysangyoung2730-debug.github.io/AICO-Privacy-Policy/>
 
-App Store Connect의 **Privacy Policy URL**과 AICO 앱 내부의 개인정보처리방침 링크에 위 주소를 사용합니다.
+개인 저장소에서 운영하는 동안 App Store Connect의 **Privacy Policy URL**과 AICO 앱 내부 링크에는 위 주소를 사용합니다. 이후 조직 저장소로 이전하면 조직의 GitHub Pages 주소로 함께 변경합니다.
 
 ## 운영 정보
 
