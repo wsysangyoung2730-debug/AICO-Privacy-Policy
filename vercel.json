@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": null,
+  "buildCommand": "ruby build_privacy_page.rb",
   "outputDirectory": "docs",
   "cleanUrls": true,
   "trailingSlash": false,

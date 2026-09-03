@@ -19,6 +19,22 @@ def heading_id(text, fallback_index)
 end
 
 lines = File.readlines(SOURCE_PATH, chomp: true)
+effective_date = lines.find { |line| line.start_with?("- 시행일:") }&.sub("- 시행일:", "")&.strip
+updated_date = lines.find { |line| line.start_with?("- 최종 수정일:") }&.sub("- 최종 수정일:", "")&.strip
+policy_version = lines.find { |line| line.start_with?("- 버전:") }&.sub("- 버전:", "")&.strip
+
+if [effective_date, updated_date, policy_version].any? { |value| value.nil? || value.empty? }
+  abort "개인정보처리방침의 시행일, 최종 수정일, 버전을 확인해 주세요."
+end
+
+history_lines = lines.drop_while { |line| line != "### 변경 이력" }
+latest_history_row = history_lines.find { |line| line.match?(/\A\|\s*\d+(?:\.\d+)*\s*\|/) }
+latest_history_cells = latest_history_row&.strip&.sub(/^\|/, "")&.sub(/\|$/, "")&.split("|")&.map(&:strip)
+
+unless latest_history_cells && latest_history_cells[0] == policy_version && latest_history_cells[1] == effective_date
+  abort "상단 버전·시행일과 변경 이력의 최신 항목이 일치하지 않습니다."
+end
+
 body = []
 navigation = []
 paragraph = []
@@ -621,9 +637,9 @@ document = <<~HTML
         </div>
         <p class="hero__lead">AICO가 개인정보를 수집·이용·보관·공유하는 방법과 이용자가 자신의 정보를 관리하는 방법을 안내합니다.</p>
         <ul class="hero-meta" aria-label="문서 정보">
-          <li>2026년 9월 4일 업데이트</li>
-          <li>시행일 2026년 9월 3일</li>
-          <li>버전 1.1</li>
+          <li>#{inline_html(updated_date)} 업데이트</li>
+          <li>시행일 #{inline_html(effective_date)}</li>
+          <li>버전 #{inline_html(policy_version)}</li>
         </ul>
       </header>
 
